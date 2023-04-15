@@ -18,10 +18,9 @@
 
  <!-- Card entering -->
 
-               <div id="welcome">
+                 <!-- <div id="welcome">
                     <div class="greet">WELCOME</div>
                     <div class="entercard">Please Enter Your Card</div>
-                    <button onclick='window.location.href="pin"' value="card"/>
                     <div id="cardinter">
                     <div class='card'>
                         <div class='chip'>
@@ -49,7 +48,7 @@
                         <div class='logo'></div>
                       </div>
                     </div>
-                 </div> 
+                 </div> -->
 
 <!-- Fingerprint detection -->
 
@@ -93,14 +92,15 @@
 <!-- Banking Screen -->
 
 
-                <!-- <div id="banking">
-                    <button class="bankscr" id="cashwth">CASH WITHDRAWAL</button>
-                    <button class="bankscr" id="mini" >MINI STATEMENT</button>
-                    <button class="bankscr" id="chck" >CHECK BALANCE</button>
-                    <button class="bankscr" id="pin">CHANGE PIN</button>
+                <div id="banking">
+                    <button class="bankscr" id="cashwth" onclick='window.location.href="cashwithdraw"'>CASH WITHDRAWAL</button>
+                    <button class="bankscr" id="mini" onclick='window.location.href="ministatement"'>MINI STATEMENT</button>
+                    <button class="bankscr" id="chck" onclick='window.location.href="bankbalance"'>CHECK BALANCE</button>
+                    <button class="bankscr" id="pin" onclick='window.location.href="changepin"'>CHANGE PIN</button>
+                    <button class="bankscr" id="cancel" onclick='window.location.href="/"'>Cancel</button>
                 </div> 
 
-
+<!-- 
               <div id="ministatement">
                   <h1 id="mini">Your statement is printing.......</h1>
                   <div class='container' style="display: none;">
