@@ -20,4 +20,11 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
         path('',views.index, name='index'),
+        path('banking',views.banking,name="banking"),
+        path('cashwithdraw',views.cashwithdrawal,name="banking"),
+        path('bankbalance',views.bankbalance,name="bankbalance"),
+        path('ministatement',views.ministatement,name="ministatement"),
+        path('changepin',views.changepin,name="changepin"),
+        path('pin',views.enterpin,name="enterpin"),
+        # path('banking',views.banking,name="banking"),
 ]
