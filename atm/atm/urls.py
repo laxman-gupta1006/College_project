@@ -26,5 +26,6 @@ urlpatterns = [
         path('ministatement',views.ministatement,name="ministatement"),
         path('changepin',views.changepin,name="changepin"),
         path('pin',views.enterpin,name="enterpin"),
+        path('alertsms',views.sendsms,name="enterpin"),
         # path('banking',views.banking,name="banking"),
 ]

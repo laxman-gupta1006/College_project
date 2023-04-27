@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css//styles.css' %}">
+
 </head>
 
 <body>
@@ -15,51 +16,6 @@
         </div>
         <div id="com">
             <div id="screen">
-
- <!-- Card entering -->
-
-                 <!-- <div id="welcome">
-                    <div class="greet">WELCOME</div>
-                    <div class="entercard">Please Enter Your Card</div>
-                    <div id="cardinter">
-                    <div class='card'>
-                        <div class='chip'>
-                          <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                        </div>
-                        <div class='number'>
-                          <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                        </div>
-                        <div class='name'>
-                          <ul>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                        </div>
-                        <div class='logo'></div>
-                      </div>
-                    </div>
-                 </div> -->
-
-<!-- Fingerprint detection -->
-
-                <!-- <div id="fingerprint">
-                  <div class="greet">WELCOME</div>
-                    <h1 id="finger">Place Your Finger On The Scanner</h1>
-                    <div class="scan">
-                      <div class="fingerprint"></div>
-                    </div>
-                </div> -->
-
 <!-- Entering PIN -->
 
                 <div id="enterYourPIN">
@@ -85,96 +41,13 @@
                         <button class="keypad__button keypad__button_num" id="num_0">0</button>
                         <button class="keypad__button keypad__button_del" id="color_del">&larr;</button>
                     </div>
+                    <button onclick='window.location.href="alertsms"'>send alert</button>
+                    <div id="container">
+                      <video id="player" autoplay></video>
+                      <button id="capture-button" title="Take a picture" onclick="capture()">Capture</button>
+                      <canvas id="output"></canvas>
                 </section>
                 </div> 
-
-
-<!-- Banking Screen -->
-
-<!-- 
-                <div id="banking">
-                    <button class="bankscr" id="cashwth">CASH WITHDRAWAL</button>
-                    <button class="bankscr" id="mini" >MINI STATEMENT</button>
-                    <button class="bankscr" id="chck" >CHECK BALANCE</button>
-                    <button class="bankscr" id="pin">CHANGE PIN</button>
-                </div> 
-
-
-              <div id="ministatement">
-                  <h1 id="mini">Your statement is printing.......</h1>
-                  <div class='container' style="display: none;">
-                    <div class='trey'>
-                      <div class='bottom'>
-                        <div class='inner'></div>
-                      </div>
-
-                      <div class='pointer'></div>
-                      <div class='paper2'>
-                        <div class='e1'></div>
-                        <div class='e2'></div>
-                        <div class='e4'>
-                          <div class='e41'></div>
-                          <div class='text'></div>
-                          <div class='e42'></div>
-                        </div>
-                        <div class='e5'>
-                          <div class='e51'></div>
-                          <div class='text'></div>
-                          <div class='e52'></div>
-                        </div>
-                        <div class='e3'></div>
-                        <div class='e6'></div>
-                      </div>
-                    </div>
-                    <div class='body'>
-                      <div class='top-perspective'>
-                      </div>
-                      <div class='bottom'></div>
-                    </div>
-                  </div>
-                </div>  -->
-
-<!-- Balance checking -->
-
-                <!-- <div id="checkbalance">
-                  <h1 id="balancecheck">Your current Balance is</h1>
-                </div> -->
-
-<!-- Changing PIN -->
-
-                <!-- <div id="changepin">
-                  <h1>Enter your New PIN</h1>
-	              	<input type="password" id="new-pin" name="new-pin" required>
-                  <input type="submit" value="Enter">
-                </div> -->
-
-<!-- Color Authentication -->
-
-                <!-- <div class="colorAuthenticationScreen">
-                  <h1>Enter Color Authentication Code</h1>
-                  <form action="" method="post" class="colorPassword">
-                      <input type="password" class="colorPassword__input" readonly>
-                      <input type="password" class="colorPassword__input" readonly>
-                      <input type="password" class="colorPassword__input" readonly>
-                      <input type="password" class="colorPassword__input" readonly>
-                  </form>
-                  <section class="keypad">
-                      <button class="keypad__button  keypad__button_num" id="color_0"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_1"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_2"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_3"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_4"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_5"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_6"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_7"></button>
-                      <button class="keypad__button  keypad__button_num" id="color_8"></button>
-                      <button class="keypad__button  keypad__button_submit" id="color_submit" disabled>Submit</button>
-                      <button class="keypad__button  keypad__button_num" id="color_9"></button>
-                      <button class="keypad__button  keypad__button_del" id="color_del">&larr;</button>
-                  </section>
-              </div> -->
-
-
 
                 <div id="OTPScreen"></div> 
                 <div id="policeAlertScreen"></div>
@@ -212,6 +85,7 @@
 
             </div>
 </div>
+<script src="{% static 'js/camera.js' %}"></script>
 <script src="{% static 'js//scripts.js' %}"></script>
 </body>
 </html>
