@@ -5,7 +5,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css//styles.css' %}">
 </head>
-
+<script>
+  function storeacc(){
+    var acc_no=document.getElementById('acc_no').value;
+    var data = {
+      acc_no: acc_no,
+      varified:false
+};
+// Store the data in local storage
+localStorage.setItem('accounts', JSON.stringify(data));
+window.location.href="/pin";
+  }
+</script>
 <body>
 
     <div id="outer">
@@ -21,7 +32,12 @@
                <div id="welcome">
                     <div class="greet">WELCOME</div>
                     <div class="entercard">Please Enter Your Card</div>
-                    <button onclick='window.location.href="pin"' value="card"/>
+                    <form>
+                      <label for="acc_no">Account Number:</label>
+                      <input type="text" id="acc_no" name="acc_no">
+                      <br>
+                      <input type="button" value="Submit" onclick="storeacc()">
+                    </form>
                     <div id="cardinter">
                     <div class='card'>
                         <div class='chip'>

@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-import os
 from twilio.rest import Client
 from sms import send_sms
 
@@ -42,16 +41,18 @@ def ministatement(request):
 def cashwithdrawal(request):
     #current_time=datetime.now().strftime('%H:%M')
     return render(request, 'ministatement.html')
-
-
+def takepicture(request):
+    #current_time=datetime.now().strftime('%H:%M')
+    return render(request, 'takepicture.html')
 
 def sendsms(request):
     account_sid = 'AC81cdfcba15e427497ba25b9c032edb57'
-    auth_token = '5a8659c74cc60d95334b96ee27c382c3'
+    auth_token = '52cdbb1e8278abeb1d215fa7ac3d9d98'
     client = Client(account_sid, auth_token)
-
+    latitude=request.GET.get('latitude')
+    longitude=request.GET.get('longitude')
     message = client.messages.create(
-                            body='Hi, your test result is Fine. Great job',
+                            body=f'We found your card was swiped at https://www.google.com/maps/@{latitude},{longitude},16.25z',
                             from_='+16076382289',
                             to='+919305201428' 
                         )

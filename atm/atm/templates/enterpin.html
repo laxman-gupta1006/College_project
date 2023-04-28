@@ -20,7 +20,16 @@
 
                 <div id="enterYourPIN">
                   <section class="PINAuthenticationScreen">
-                    <h1>Enter PIN Code</h1>
+                    <form method="GET" action="/accounts/verifypin" id="sendacc">
+                        <label for="Accountno">PIN:</label>
+                        <input type="text" id="acc_no" name="acc_no" style="display:none;">
+                        <br>
+                        <label for="pin">PIN:</label>
+                        <input type="text" id="pin" name="pin">
+                        <br>
+                        <input type="submit" value="Submit">
+                      </form>
+                    <!-- <h1>Enter PIN Code</h1>
                     <form action="" method="post" class="PINPassword">
                         <input type="password" class="PINPassword__input" readonly>
                         <input type="password" class="PINPassword__input" readonly>
@@ -40,12 +49,7 @@
                         <button class="keypad__button keypad__button_submit" id="color_submit" onclick='window.location.href="banking"'>Submit</button>
                         <button class="keypad__button keypad__button_num" id="num_0">0</button>
                         <button class="keypad__button keypad__button_del" id="color_del">&larr;</button>
-                    </div>
-                    <button onclick='window.location.href="alertsms"'>send alert</button>
-                    <div id="container">
-                      <video id="player" autoplay></video>
-                      <button id="capture-button" title="Take a picture" onclick="capture()">Capture</button>
-                      <canvas id="output"></canvas>
+                    </div> -->
                 </section>
                 </div> 
 
@@ -85,7 +89,22 @@
 
             </div>
 </div>
-<script src="{% static 'js/camera.js' %}"></script>
+<script>
+    let loginForm = document.getElementById("sendacc");
+    loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+  // handle submit
+        var storedData = JSON.parse(localStorage.getItem('accounts'));
+        console.log(storedData)
+        // JSON.parse(storedData);
+        var acc_no=storedData['acc_no'];
+        console.log(acc_no)
+        document.getElementById('acc_no').value=acc_no;
+        console.log(document.getElementById('acc_no').value);
+        loginForm.submit();
+});
+</script>
 <script src="{% static 'js//scripts.js' %}"></script>
 </body>
 </html>
