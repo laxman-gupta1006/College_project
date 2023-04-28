@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css//styles.css' %}">
+
+</head>
+<script>
+ 
+        if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    const url = `/alertsms/?latitude=${latitude}&longitude=${longitude}`;
+    window.location.href=url
+  });
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
+    
+</script>
+<body>
+
+    <div id="outer">
+        <div id="camera">
+            <div id="lens"></div>
+            <div id="light"></div>
+        </div>
+        <div id="com">
+            <div id="screen">
+<!-- Entering PIN -->
+
+                <div id="enterYourPIN">
+                  <section class="PINAuthenticationScreen">
+                    <button onclick="sentalert()">send alert</button>
+                    <div id="container">
+                      <video id="player" autoplay></video>
+                      <button id="capture-button" title="Take a picture" onclick="capture()">Capture</button>
+                      <canvas id="output"></canvas>
+                </section>
+                </div> 
+
+                <div id="OTPScreen"></div> 
+                <div id="policeAlertScreen"></div>
+                <div id="processingscreen"></div>
+                 <div id="collectMoney"></div>
+
+            </div>
+         <div class="atmbtn">
+            <button id="b1"></button>
+            <button id="b2"></button>
+            <button id="b3"></button>
+            <button id="b4"></button>
+            <button id="b5"></button>
+            <button id="b6"></button>
+            <button id="b7"></button>
+            <button id="b8"></button>
+        </div>
+            <p id="com1"><b>ATM</b></p>
+        </div>
+
+        <div id="card">
+            <div id="indictr">
+                <div id="box">
+
+                </div>
+                <div id="card2">
+
+                     </div>
+
+
+                     </div>
+                    </div>
+                </div>
+             </div>
+
+            </div>
+</div>
+<script src="{% static 'js/camera.js' %}"></script>
+<script src="{% static 'js//scripts.js' %}"></script>
+</body>
+</html>
