@@ -1,4 +1,3 @@
-﻿# College_project
 # Multi-factor Authentication in ATM with Fraud Alerting System
 
 ## Authors
